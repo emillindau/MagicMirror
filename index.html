@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/mirror.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-xs-6 text-left" id="weather-panel">
+            <div>
+                <span class="title" id="temperature">-4˚</span>
+
+                <figure class="icons">
+                    <canvas id="weather-icon" width="64" height="64" class="wind">
+                    </canvas>
+                </figure>
+
+                <p class="sub-title" id="hour-summary">Venté</p>
+                <p class="sub-sub-title" id="day-summary">Venté durant toute la journée.</p>
+            </div>
+        </div>
+
+        <div class="col-xs-6 text-right" id="clock-panel">
+            <div>
+                <span class="title" id="hour">22</span>
+                <span class="title" id="separator">:</span>
+                <span class="title" id="minutes">10</span>
+                <p class="sub-title" id="day">Lundi^</p>
+                <p class="sub-sub-title" id="date">10 janvier 2017</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12 text-center" id="message-panel">
+            <div>
+                <p class="center-message">Hello pretty face!</p>
+                <p class="center-message">You look crazy beautiful today.</p>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="text-left" id="news-panel"></div>
+        </div>
+
+        <div class="col-xs-6" id="transport-panel">  
+            <div class="line-schedule text-right" id="transport0"></div>
+            <div class="line-schedule text-right" id="transport1"></div>
+            <div class="line-schedule text-right" id="transport2"></div>                                    
+            <div class="line-schedule text-right" id="transport3"></div>
+        </div>
+    </div>
+</body>
+
+<!-- External libs fix -->
+
+<script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+
+<script src="libs/jquery.min.js"></script>
+<script src="libs/bootstrap.min.js"></script>
+<script src="libs/skycons.js"></script>
+<script src="libs/underscore-min.js"></script>
+
+<script>
+    require('./js/weather.js');
+    require('./js/clock.js');
+    require('./js/news.js');
+    require('./js/transport.js');  
+    require('./js/server.js');
+</script>
+
+<script>if (window.module) module = window.module;</script>
+
+</html>

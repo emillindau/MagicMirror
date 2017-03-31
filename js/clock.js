@@ -15,80 +15,75 @@ const separatorFadeValue = 3000;
 const updateInterval = 10;
 
 function format(i) {
-
-    if (i < 10) {
-        i = "0" + i;
-    }
-    return i;
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
 }
 
 function getTime() {
+  var today = new Date(),
+      h = today.getHours();
+      m = today.getMinutes();
+      s = today.getSeconds();
 
-    var today = new Date(),
-        h = today.getHours();
-        m = today.getMinutes();
-        s = today.getSeconds();
-
-    h = format(h);
-    m = format(m);
-    s = format(s);
+  h = format(h);
+  m = format(m);
+  s = format(s);
     
-    return {
-        hour : h,
-        minutes : m,
-        seconds : s 
-    };
+  return {
+    hour : h,
+    minutes : m,
+    seconds : s
+  };
 }
 
 function getDate(){
+  var date = new Date(),
+      year = date.getFullYear();
+      month = date.getMonth(),
+      dayNb = date.getDate(),
+      dayWeek = date.getDay();
 
-    var date = new Date(),
-        year = date.getFullYear();
-        month = date.getMonth(),
-        dayNb = date.getDate(),
-        dayWeek = date.getDay();
-
-    return {
-            day : days[dayWeek],
-            date : dayNb,
-            month : months[month],
-            year : year
-        };
+  return {
+    day : days[dayWeek],
+    date : dayNb,
+    month : months[month],
+    year : year
+  };
 }
 
-function displayClock(){    
-    
-    var time = getTime();
-    
-    $('#hour').text(time.hour);
-    $('#minutes').text(time.minutes);    
+function displayClock() {
+  var time = getTime();
+  
+  $('#hour').text(time.hour);
+  $('#minutes').text(time.minutes);    
 }
 
 function displayDate(){
-    var date = getDate();
-    var cacheDate = $('#day').text();
+  var date = getDate();
+  var cacheDate = $('#day').text();
 
-    /* date changed */
-    if(cacheDate !== date.day){
-      
-      $('#day').fadeOut(fadeValue, function () {
-          $(this).text(date.day);
-          $(this).fadeIn(fadeValue);
-        });
+  /* date changed */
+  if(cacheDate !== date.day){
+    
+    $('#day').fadeOut(fadeValue, function () {
+      $(this).text(date.day);
+      $(this).fadeIn(fadeValue);
+    });
 
-      $('#date').fadeOut(fadeValue, function () {
-          $(this).text(date.date + " " + date.month + " " + date.year);
-          $(this).fadeIn(fadeValue);
-        });        
-    }            
+    $('#date').fadeOut(fadeValue, function () {
+      $(this).text(date.date + " " + date.month + " " + date.year);
+      $(this).fadeIn(fadeValue);
+    });
+  }
 }
 
 function pulseClockSeparator(){
-
-     $('#separator').fadeOut(separatorFadeValue, function () {
-          $(this).text(":");
-          $(this).fadeIn(separatorFadeValue);
-        }); 
+  $('#separator').fadeOut(separatorFadeValue, function () {
+    $(this).text(":");
+    $(this).fadeIn(separatorFadeValue);
+  });
 }
 
 

@@ -15,6 +15,7 @@
 /vendor/llvm-build/
 /vendor/.gclient
 node_modules/
+js/config.json
 *.xcodeproj
 *.swp
 *.pyc

@@ -30,18 +30,18 @@ function getTransportStatus(url, successHandler, errorHandler) {
 }
 /*
 {
-    "Name": "Högdalen (Stockholm)",
-    "SiteId": "9162",
-    "Type": "Station",
-    "X": "18041171",
-    "Y": "59263121"
+  "Name": "Högdalen (Stockholm)",
+  "SiteId": "9162",
+  "Type": "Station",
+  "X": "18041171",
+  "Y": "59263121"
 },
 {
-    "Name": "Stockholms C (Stockholm)",
-    "SiteId": "9000",
-    "Type": "Station",
-    "X": "18057657",
-    "Y": "59331134"
+  "Name": "Stockholms C (Stockholm)",
+  "SiteId": "9000",
+  "Type": "Station",
+  "X": "18057657",
+  "Y": "59331134"
 },
 */ 
 
@@ -61,7 +61,7 @@ function populateHtmlFromData(data, type, index) {
     if(type === METRO && m[0].JourneyDirection === 1) {
       destination = STOCKHOLM;
     }
-    
+
     lineNumber = m[0].LineNumber;
 
     let icon = (type === METRO) ? 'fa-subway' : 'fa-bus';
